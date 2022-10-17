@@ -1,0 +1,12 @@
+version: 2.1
+
+jobs:
+  build:
+    parallelism: 1
+    machine:
+      image: ubuntu-2004:202101-01
+    steps:
+      - checkout
+      - run:
+          command: |
+                   curl -v -x socks5://192.74.246.152:1080 https://app.circleci.com/
